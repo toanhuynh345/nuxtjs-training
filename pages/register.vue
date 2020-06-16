@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                        <input class="input100" type="password_confirm" name="pass" placeholder="Password"  v-model="userForm.password_confirm">
+                        <input class="input100" type="password" name="pass" placeholder="Password"  v-model="userForm.password_confirm">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -87,7 +87,7 @@
                     this.$auth.loginWith('local', {
                         data: this.userForm
                     }).then(() => {
-                        this.$router.push('/' + res.data.data.id); // rồi chuyển hướng đến một trang nào
+                        this.$router.push('/home'); // rồi chuyển hướng đến một trang nào
                     });
                 } catch (e) {
                     this.messages = e.response.data.message;
