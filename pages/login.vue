@@ -81,6 +81,7 @@
                    data: this.userForm
                }).then((response) => {
                    console.log(response);
+                  this.$router.push('/home');
                }).catch((errors) => {
                    this.message = errors.response.data.message;
                    if (errors.response.status === 422 ){

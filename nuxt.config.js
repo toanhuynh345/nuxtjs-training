@@ -60,17 +60,13 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          // các đường dẫn đến API
-          // propertyName: kết quả từ API trả về, nhớ xem kết quả để đặt key cho đúng
           login: { url: '/login', method: 'post', propertyName: 'access_token' },
-          // sau khi login, sẽ tự động chạy cái API này nữa để lấy dữ liệu user
-          user: { url: '/user', method: 'get', propertyName: 'data' },
-          logout: false
+          user: { url: '/user', method: 'get', propertyName: false},
+          logout: { url: '/logout', method: 'get'}
         }
       },
     }
   },
-//dùng cái này để sử dụng middleware xác thực người dùng cho mọi route, tương tự middleware trong Laravel
   router: {
     middleware: ['auth']
   },
