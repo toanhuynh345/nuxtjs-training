@@ -1,9 +1,26 @@
 <template>
   <div>
-    <nuxt />
+    <div v-if="$nuxt.isOffline">You are offline</div>
+    <div class="d-flex" id="wrapper">
+      <sidebar/>
+      <div id="page-content-wrapper" class="flex-fill">
+        <HeaderLayouts/>
+        <Breadcrumbs />
+        <nuxt />
+      </div>
+    </div>
   </div>
 </template>
-
+<script>
+  import Sidebar from '~/components/Sidebar.vue'
+  import HeaderLayouts from '~/components/Header.vue'
+  import Breadcrumbs from '~/components/Breadcrumbs.vue'
+  export default {
+    components: {
+      Sidebar, HeaderLayouts, Breadcrumbs
+    }
+  }
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

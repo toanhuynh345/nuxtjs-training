@@ -63,6 +63,7 @@
 <script>
     export default {
         name: "login",
+        layout: 'fullpage',
         data() {
             return {
                 userForm: {
@@ -80,8 +81,8 @@
                await this.$auth.login({
                    data: this.userForm
                }).then((response) => {
-                   console.log(response);
-                  this.$router.push('/home');
+
+                  this.$router.push('/shoes');
                }).catch((errors) => {
                    this.message = errors.response.data.message;
                    if (errors.response.status === 422 ){

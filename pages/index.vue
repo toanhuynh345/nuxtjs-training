@@ -8,38 +8,23 @@
       <h2 class="subtitle">
         My neat Nuxt.js project
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <button class="btn btn-dark" v-tooltip.top-center="'You have ' + 6 + ' new messages.'">Click </button>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-
 export default {
   middleware: 'auth',
   components: {
-    Logo
+    Logo,
   },
 }
 </script>
 
 <style>
+
 .container {
   margin: 0 auto;
   min-height: 100vh;

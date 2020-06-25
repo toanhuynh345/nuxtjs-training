@@ -67,6 +67,7 @@
     export default {
         name: "register",
         auth: false,
+        layout: 'fullpage',
         data(){
             return {
                 userForm: {
@@ -83,7 +84,6 @@
             async registerUser() {
                 try {
                     let res = await this.$axios.post('register', this.userForm);
-                    console.log('res:',res);
                     this.$auth.loginWith('local', {
                         data: this.userForm
                     }).then(() => {
